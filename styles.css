@@ -1,0 +1,109 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	height: 100%;
+	background: #101010;
+	color: white;
+	font-size: 1.5em;
+	display: flex;
+	align-items: center;
+}
+
+a {
+	text-decoration: none;
+	color: #777;
+}
+
+.header {
+	flex: 1;
+}
+
+h1 {
+	font-family: "Rubik Bubbles", Arial, sans-serif;
+	color: red;
+	text-align: center;
+	font-size: 4em;
+}
+
+span {
+	display: block;
+}
+
+#copyright {
+	display: flex;
+	justify-content: center;
+	margin-top: 32px;
+}
+
+.btn {
+	width: 256px;
+	background: inherit;
+	color: inherit;
+	padding: 8px;
+	font-size: 1em;
+	border: red solid 2px;
+	border-radius: 8px;
+}
+
+input[type="range"] {
+	width: 256px;
+}
+
+input[type="color"] {
+	width: 128px;
+	height: 128px;
+}
+
+button, input {
+	cursor: pointer;
+}
+
+#bordersBtn {
+	background: red;
+}
+
+#bordersBtn.inactive {
+	background: inherit;
+}
+
+#eraserBtn.active {
+	background: red;
+}
+
+#settings {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 16px;
+	width: 30vw;
+	height: 100vh;
+}
+
+#main {
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	flex: 1;
+}
+
+#grid {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 32px;
+	width: 500px;
+	height: 500px;
+	border-top: white solid 2px;
+	border-right: white solid 3px;
+	border-bottom: white solid 3px;
+	border-left: white solid 2px;
+}
+
+.cell {
+	border-top: white solid 1px;
+	border-left: white solid 1px;
+}
