@@ -10,7 +10,9 @@ body {
 	color: white;
 	font-size: 1.5em;
 	display: flex;
+	justify-content: center;
 	align-items: center;
+	flex-wrap: wrap;
 }
 
 a {
@@ -18,7 +20,7 @@ a {
 	color: #777;
 }
 
-.header {
+#header {
 	flex: 1;
 }
 
@@ -84,11 +86,12 @@ button, input {
 	height: 100vh;
 }
 
-#main {
+main {
 	display: flex;
 	justify-content: end;
 	align-items: center;
 	flex: 1;
+	max-width: 100%;
 }
 
 #grid {
@@ -96,7 +99,7 @@ button, input {
 	flex-wrap: wrap;
 	margin: 0 32px;
 	width: 500px;
-	height: 500px;
+	aspect-ratio: 1/1;
 	border-top: white solid 2px;
 	border-right: white solid 3px;
 	border-bottom: white solid 3px;
@@ -106,4 +109,26 @@ button, input {
 .cell {
 	border-top: white solid 1px;
 	border-left: white solid 1px;
+}
+
+@media (max-width: 1200px) {
+	body {
+		flex-direction: column;
+	}
+
+	h1 {
+		font-size: 3em;
+	}
+
+	#header {
+		margin-bottom: 64px;
+	}
+
+	#settings {
+		margin-top: -64px;
+	}
+
+	#main {
+		order: 1;
+	}
 }
