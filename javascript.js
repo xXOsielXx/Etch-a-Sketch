@@ -122,17 +122,6 @@ bordersBtn.onclick = () => {
 	}
 }
 
-eraserBtn.onclick = () => {
-	if (eraser==false) {
-		eraser = true;
-		eraserBtn.classList.add("active");
-	}
-	else if (eraser=true) {
-		eraser = false;
-		eraserBtn.classList.remove("active");
-	}
-}
-
 clearBtn.onclick = () => {
 	clearGrid();
 }

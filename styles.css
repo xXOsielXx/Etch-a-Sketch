@@ -3,10 +3,13 @@
 	padding: 0;
 }
 
+html, body {
+	height: 100%;
+}
+
 body {
 	font-family: Arial, sans-serif;
-	height: 100%;
-	background: #101010;
+	background: linear-gradient(#111, #151515);
 	color: white;
 	font-size: 1.5em;
 	display: flex;
@@ -25,7 +28,7 @@ a {
 }
 
 h1 {
-	font-family: "Rubik Bubbles", Arial, sans-serif;
+	font-family: cursive, Arial, sans-serif;
 	color: red;
 	text-align: center;
 	font-size: 4em;
@@ -36,8 +39,7 @@ span {
 }
 
 #copyright {
-	display: flex;
-	justify-content: center;
+	text-align: center;
 	margin-top: 32px;
 }
 
@@ -72,10 +74,6 @@ button, input {
 	background: inherit;
 }
 
-#eraserBtn.active {
-	background: red;
-}
-
 #settings {
 	display: flex;
 	flex-direction: column;
@@ -83,7 +81,6 @@ button, input {
 	align-items: center;
 	gap: 16px;
 	width: 30vw;
-	height: 100vh;
 }
 
 main {
@@ -113,19 +110,14 @@ main {
 
 @media (max-width: 1200px) {
 	body {
+		height: unset;
 		flex-direction: column;
+		gap: 64px;
+		padding: 32px 0;
 	}
 
 	h1 {
 		font-size: 3em;
-	}
-
-	#header {
-		margin-bottom: 64px;
-	}
-
-	#settings {
-		margin-top: -64px;
 	}
 
 	#main {
