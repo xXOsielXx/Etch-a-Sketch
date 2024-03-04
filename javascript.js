@@ -10,6 +10,9 @@ let sizeValue;
 let grid = document.querySelector("#grid");
 let cell = document.querySelectorAll(".cell");
 
+let isDragging = false;
+let activeCell;
+
 let clearBtn = document.querySelector("#clearBtn");
 let eraserBtn = document.querySelector("#eraserBtn");
 let bordersBtn = document.querySelector("#bordersBtn");
@@ -20,6 +23,27 @@ let borders = true;
 let div;
 let backgroundColor = "inherit";
 
+grid.addEventListener("touchstart", function(e) {
+  isDragging = true;
+  activeCell = e.target;
+  activeCell.style.background = colorPicker.value;
+});
+
+grid.addEventListener("touchend", function() {
+  isDragging = false;
+  document.body.style.overflow = "auto";
+});
+
+grid.addEventListener("touchmove", function(e) {
+  if (isDragging) {
+    let touch = e.touches[0];
+    let cell = document.elementFromPoint(touch.clientX, touch.clientY);
+    if (cell.classList.contains("cell")) {
+      cell.style.background = colorPicker.value;
+    };
+    document.body.style.overflow = "hidden";
+  }
+});
 
 // Functions 
 
@@ -61,12 +85,7 @@ function updateGrid() {
 		}
 
 		element.onmouseover = () => {
-			if (eraser == false) {
-				element.style.background = colorPicker.value;
-			}
-			else if (eraser == true) {
-				element.style.background = backgroundColor;
-			}
+			element.style.background = colorPicker.value;
 		}
 	})
 }
@@ -85,7 +104,6 @@ function clearGrid() {
 		element.style.background = backgroundColor;
 	})
 }
-
 
 // Initial Value
 
