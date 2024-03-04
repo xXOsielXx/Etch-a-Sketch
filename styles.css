@@ -15,7 +15,12 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-wrap: wrap;
+}
+
+body > div {
+	width: 100%;
+	display: flex;
+	justify-content: center;
 }
 
 a {
@@ -25,6 +30,7 @@ a {
 
 #header {
 	flex: 1;
+	margin: 0 32px;
 }
 
 h1 {
@@ -62,6 +68,12 @@ input[type="color"] {
 	height: 128px;
 }
 
+input[type="range"],
+input[type="color"],
+.btn {
+	max-width: 100%;
+}
+
 button, input {
 	cursor: pointer;
 }
@@ -85,9 +97,8 @@ button, input {
 
 main {
 	display: flex;
-	justify-content: end;
+	justify-content: center;
 	align-items: center;
-	flex: 1;
 	max-width: 100%;
 }
 
@@ -95,12 +106,17 @@ main {
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0 32px;
-	width: 500px;
+	max-height: 90vh;
+	max-width: 90vh;
 	aspect-ratio: 1/1;
 	border-top: white solid 2px;
 	border-right: white solid 3px;
 	border-bottom: white solid 3px;
 	border-left: white solid 2px;
+}
+
+main, #grid {
+	flex: 1;
 }
 
 .cell {
@@ -109,8 +125,12 @@ main {
 }
 
 @media (max-width: 1200px) {
-	body {
+	html, body {
 		height: unset;
+	}
+
+	body {
+		background: #111;
 		flex-direction: column;
 		gap: 64px;
 		padding: 32px 0;
@@ -120,7 +140,32 @@ main {
 		font-size: 3em;
 	}
 
-	#main {
+	span {
+		display: inline;
+	}
+
+	main {
 		order: 1;
+	}
+
+	#settings {
+		margin: 0 16px;
+	}
+}
+
+@media (max-width: 800px) {
+	body > div {
+		flex-direction: column;
+		gap: 64px;
+	}
+
+	#settings {
+		width: 100%;
+		margin: 0;
+	}
+
+	#grid {
+		width: 90vw;
+		height: 90vw;
 	}
 }
