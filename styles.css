@@ -3,14 +3,23 @@
 	padding: 0;
 }
 
+:root {
+	--white: #fff;
+	--black: #000;
+	--dark-gray: #111;
+
+	--bg-color: var(--white);
+	--color: var(--black);
+}
+
 html, body {
 	height: 100%;
 }
 
 body {
 	font-family: Arial, sans-serif;
-	background: linear-gradient(#111, #151515);
-	color: white;
+	background-color: var(--bg-color);
+	color: var(--color);
 	font-size: 1.5em;
 	display: flex;
 	justify-content: center;
@@ -122,6 +131,13 @@ main, #grid {
 .cell {
 	border-top: white solid 1px;
 	border-left: white solid 1px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+  	--bg-color: var(--dark-gray);
+  	--color: var(--white);
+  }
 }
 
 @media (max-width: 1200px) {
